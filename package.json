@@ -1,0 +1,79 @@
+{
+  "name": "delshiv-ai",
+  "version": "1.0.0",
+  "description": "Delshiv AI — Futuristic Command Center UI Design by Mr. Shivam",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "author": "Mr. Shivam",
+  "license": "ISC",
+  "build": {
+    "appId": "com.delshiv.ai",
+    "productName": "Delshiv AI",
+    "directories": {
+      "output": "dist"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "sr3139757-code",
+        "repo": "Delshiv-AI",
+        "releaseType": "release"
+      }
+    ],
+    "asar": true,
+    "files": [
+      "*.js",
+      "*.cjs",
+      "allowed_users.json",
+      "src/**/*",
+      "public/**/*",
+      "assets/**/*",
+      "plugins/**/*",
+      "!.env*",
+      "!logs/**",
+      "!backups/**",
+      "!*.db*",
+      "!*.jsonl",
+      "!*.log",
+      "!*.lnk",
+      "!*.bat",
+      "!*.vbs",
+      "!GEMINI.md",
+      "!dist/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Delshiv AI",
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "installerHeaderIcon": "assets/icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.18.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "fuse.js": "^7.5.0"
+  }
+}

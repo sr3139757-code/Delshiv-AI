@@ -1,0 +1,27 @@
+# Secrets & Auth
+.env
+.env.*
+allowed_users.json
+auth_session.json
+pin_lock.json
+secrets.json
+settings.json
+schema_meta.json
+
+# Dependencies & Build Output
+node_modules/
+dist/
+build/
+out/
+
+# Runtime Databases, Logs & Backups
+logs/
+backups/
+*.db
+*.db-wal
+*.db-shm
+*.tmp
+*.corrupt-*
+*.log
+*.jsonl
+Delshiv AI.lnk
